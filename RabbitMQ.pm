@@ -48,7 +48,7 @@ Creates a new Net::RabbitMQ object.
 
 C<$hostname> is the host to which a connection will be attempted.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        user => $user,           #default 'guest'
@@ -83,7 +83,7 @@ C<$channel> is a channel that has been opened with C<channel_open>.
 
 C<$exchange> is the name of the exchange to be instantiated.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        exchange_type => $type,  #default 'direct'
@@ -98,7 +98,7 @@ C<$channel> is a channel that has been opened with C<channel_open>.
 
 C<$exchange> is the name of the exchange to be deleted.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        if_unused => $boolean,   #default 1
@@ -113,7 +113,7 @@ C<$queuename> is the name of the queuename to be instantiated.  If
 C<$queuename> is undef or an empty string, then an auto generated
 queuename will be used.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        passive => $boolean,     #default 0
@@ -160,7 +160,7 @@ C<$routing_key> is the name of the routing key for this message.
 
 C<$body> is the payload to enqueue.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        exchange => $exchange,   #default 'amq.direct'
@@ -168,7 +168,8 @@ C<$options> is an optional hash respecting the following keys:
        immediate => $boolean,   #default 0
      }
 
-C<$props> is an optional hash (the AMQP 'props') respecting the following keys:
+C<$props> is an optional hash (the AMQP 'props') containing the following keys:
+
      {
        content_type => $string,
        content_encoding => $string,
@@ -190,7 +191,7 @@ C<$channel> is a channel that has been opened with C<channel_open>.
 
 C<$queuename> is the name of the queue from which we'd like to consume.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        consumer_tag => $tag,    #absent by default
@@ -218,7 +219,8 @@ containing the following information:
        props => $props,                   # hashref sent in
      }
 
-C<$props> is the hash sent by publish()  respecting the following keys:
+C<$props> is the hash sent by publish() containting the following keys:
+
      {
        content_type => $string,
        content_encoding => $string,
@@ -240,10 +242,10 @@ C<$channel> is a channel that has been opened with C<channel_open>.
 
 C<$queuename> is the name of the queue from which we'd like to consume.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
 This command runs an amqp_basic_get which returns undef immediately
-if no messages are available on the queue and returns a has as follows
+if no messages are available on the queue and returns a hash as follows
 if a message is available.
 
      {
@@ -307,7 +309,7 @@ Rollback a server-side (tx) transaction over $channel.
 
 C<$channel> is a channel that has been opened with C<channel_open>.
 
-C<$options> is an optional hash respecting the following keys:
+C<$options> is an optional hash containing the following keys:
 
      {
        prefetch_count => $cnt,  #default 0
