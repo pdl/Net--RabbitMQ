@@ -219,7 +219,7 @@ containing the following information:
        props => $props,                   # hashref sent in
      }
 
-C<$props> is the hash sent by publish() containting the following keys:
+C<$props> is the hash sent by publish() containing the following keys:
 
      {
        content_type => $string,
